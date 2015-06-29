@@ -1,6 +1,6 @@
 $(document).ready(function() {
     //functions go here
-    $('#orange').hover( function() {
+    $('#blue').hover( function() {
         $( '#container' ).css({"display": "block"});
     }, function() {
         $( '#container' ).css({"display": "none"});
@@ -13,11 +13,6 @@ $(document).ready(function() {
     // }, function() {
     //     $( this ).css({"background-color": "green"});
     // }
-
-    //hide on click
-    $('#blue').click(function(){
-        $(this).hide();
-    });
 
 
 

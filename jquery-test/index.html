@@ -2,15 +2,16 @@
 <html>
     <head>
         <title>Test</title>
-        <link rel="stylesheet" type="css/text" href="test.css"/>
-        <link rel="stylesheet" type="css/text" href="injected.css"/>
+        <!-- stylesheets -->
+        <link rel="stylesheet" type="css/text" href="main.css"/>
+        <!-- javascript -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
         <script src="http://code.jquery.com/ui/1.9.2/jquery-ui.js"></script>
         <script type="text/javascript" src="test.js"></script>
     </head>
     <body>
         <!-- this div can be representative of the symbol on the floor plan map -->
-        <div id="orange">
+        <div id="blue">
 
             <!-- block to be injected -->
             <div id="container">
@@ -23,20 +24,21 @@
             <!-- data -->
             <div id="data-box">
                 <ul id="data-list">
-                    <li id="building">Building</li>
+                    <!-- key value pairs, in order to style -->
+                    <li id="building" class="key">Building</li>
                     <!-- keep the descriptions, and append the list values -->
                     <li>Steinman Hall</li>
 
-                    <li id="room#">Room #</li>
+                    <li id="room#" class="key">Room #</li>
                     <li>620</li>
 
-                    <li id="deptarment">Department</li>
+                    <li id="deptarment" class="key">Department</li>
                     <li>Electrical Engineering</li>
 
-                    <li id="description">Description</li>
+                    <li id="description" class="key">Description</li>
                     <li>Laboratory</li>
 
-                    <li id="Occupant">Occupant</li>
+                    <li id="Occupant" class="key">Occupant</li>
                     <li>None</li>
                 </ul>
             </div>
@@ -47,6 +49,5 @@
 
         </div>
 
-        <div id="blue"></div>
     </body>
 </html>

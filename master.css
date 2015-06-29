@@ -7,37 +7,21 @@ a {
 }
 
 #outer {
-    background: url(https://raw.githubusercontent.com/danielcodes/Sandbox/master/5th-sample-white.png?token=AD0vFxOGxi1A3INLGEazJa_7y37KpO_uks5VisUVwA%3D%3D);
-    position: relative;
+	/*working background*/
+    background : url(https://raw.githubusercontent.com/danielcodes/sandbox/master/5th-whole.PNG?token=AD0vF_YvRE8tfdqkcVT7lGwj410AdcGcks5VkuLpwA%3D%3D);
 
-    height: 550px;
-    width: 600px;
+
+	position: relative;
+
+	height : 842px;
+	width: 1318px;
+
 }
 
 #rm-503 {
     position: absolute;
 
-    left: 210px;
-    top: 136px;
-}
-
-#rm-508 {
-    position: absolute;
-
-    left: 496px;
-    top: 120px;
-}
-
-#rm-582 {
-    position: absolute;
-
-    left: 105px;
-    top: 366px;
-}
-
-#rm-581 {
-    position: absolute;
-
-    left: 108px;
-    top: 508px;
+	background-color: #CCCC66;
+    left: 70px;
+    top: 60px;
 }
