@@ -9,19 +9,10 @@ a {
 #outer {
 	/*working background*/
     background : url(https://raw.githubusercontent.com/danielcodes/sandbox/master/5th-whole.PNG?token=AD0vF_YvRE8tfdqkcVT7lGwj410AdcGcks5VkuLpwA%3D%3D);
-
-
+    
 	position: relative;
 
 	height : 842px;
 	width: 1318px;
 
-}
-
-#rm-503 {
-    position: absolute;
-
-	background-color: #CCCC66;
-    left: 70px;
-    top: 60px;
 }
