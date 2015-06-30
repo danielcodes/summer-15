@@ -1,0 +1,59 @@
+#blue {
+    height: 20px;
+    width: 20px;
+    left: 70px;
+    top: 60px;
+    position: absolute;
+    background-color: navy;
+    border-radius: 5px;
+}
+
+
+/*here and below is the hover pop up*/
+
+ul {
+    list-style-type: none;
+    padding: 20px;
+    margin: 0;
+}
+
+.key {
+    font-weight: bold;
+}
+
+#container {
+    height:285px;
+    width: 600px;
+    border-radius: 25px;
+
+    position: relative;
+    background-color: #892189;
+    display: none;
+}
+
+#picture {
+    height: 380px;
+    width: 400px;
+
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+
+#picture img {
+    width: 100%;
+    height: auto;
+    max-height: 260px;
+    border-radius: 25px;
+}
+
+#data-box {
+    height: 260px;
+    width: 170px;
+    border-radius: 25px;
+
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #DCDCD9;
+}
