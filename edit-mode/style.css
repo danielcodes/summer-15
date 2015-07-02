@@ -1,0 +1,34 @@
+body {
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+    color: #00B7FF;
+}
+
+ul {
+    padding: 0;
+}
+
+ul li {
+    list-style-type: none;
+    background: #efefef;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+/*save and cancel buttons off*/
+ul li .edit {
+    display: none;
+}
+
+/*don't know what this does*/
+ul li.edit .edit {
+    display: initial;
+}
+
+/*hides edit button when it is in edit mode*/
+ul li.edit .noedit {
+    display: none;
+}
