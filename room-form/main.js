@@ -44,8 +44,12 @@ $(document).ready(function (){
     //once a click outside is made, remove class and remove border, life is good again
     $('#outer').on('click', '.room', function() {
         $(this).css({"border": "3px solid black"});
-        $(this).addClass("target");
+        $(this).addClass("draggable target");
+        $(".draggable").draggable();
     });
+
+    //make symbols draggable
+
 
     //reusing code,
     $(document).mouseup(function (e)
@@ -56,7 +60,8 @@ $(document).ready(function (){
         if (!container.is(e.target) // if the target of the click isn't the container...
             && container.has(e.target).length === 0) // ... nor a descendant of the container
         {
-            container.removeClass("target");
+            //gotta remove all the nonsense classe that get added when draggable is called on an element
+            container.removeClass("target draggable ui-draggable ui-draggable-handle");
             container.css({"border": "none"});
         }
     });
