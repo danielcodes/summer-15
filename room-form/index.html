@@ -1,0 +1,70 @@
+<html>
+    <head>
+        <title>Room Form</title>
+        <link rel="stylesheet" type="text/css" href="main.css">
+    </head>
+    <body>
+
+        <h2>Room Form</h2>
+        <p>MODE: (either edit or display)</p>
+
+        <!-- insert content to this ul -->
+        <div id="outer"></div>
+
+        <!-- save room for the template to be inserted -->
+        <template id="room-template">
+            <!-- room-number -->
+            <div class="{{roomnumber}} room">
+                <!-- container, holds both picture and data -->
+                <div class="container">
+                    <!-- picture -->
+                    <div class="picture">
+                        <img src="{{imglink}}" />
+                    </div>
+
+                    <!-- data -->
+                    <div class="data-box">
+                        <ul class="data-list">
+                            <li class="building key">Building</li>
+                            <li>{{building}}</li>
+
+                            <li class="room# key">Room #</li>
+                            <li>{{roomnumber}}</li>
+
+                            <li class="deptarment key">Department</li>
+                            <li>{{department}}</li>
+
+                            <li class="description key">Description</li>
+                            <li>{{description}}</li>
+
+                            <li class="Occupant key">Occupant</li>
+                            <li>{{occupant}}</li>
+                        </ul>
+                    </div>
+                <!-- closes container -->
+                </div>
+            <!-- closes room number -->
+            </div>
+        </template>
+
+        <!-- enclose form in a division -->
+        <div id="room-form">
+            <h4>Add room info</h4>
+            <!-- 5 parameters -->
+            <p> Building: <input type="text" id="building"> </p>
+            <p> room-number: <input type="text" id="room-number"> </p>
+            <p> department: <input type="text" id="department"> </p>
+            <p> description: <input type="text" id="description"> </p>
+            <p> occupant: <input type="text" id="occupant"> </p>
+            <p> image-link: <input type="text" id="img-link"></p>
+            <!-- button to add -->
+            <button id="add-room">Add room</button>
+        </div>
+
+        <!-- scripts -->
+        <script src="jquery/jquery.js" ></script>
+        <script src="main.js" ></script>
+    	<script src="mustache/mustache.js"></script>
+
+    </body>
+</html>
