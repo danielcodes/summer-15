@@ -8,6 +8,23 @@
         <h2>Room Form</h2>
         <p>MODE: (either edit or display)</p>
 
+        <!-- toggle between these two modes -->
+        <div>
+          <form role="form">
+            <label class="radio-inline">
+              <!-- radio buttons with the same name act can only
+              activate one at a time, cool -->
+              <input type="radio" name="mode" id="mode-view">VIEW
+            </label>
+            <label class="radio-inline">
+              <input type="radio" name="mode" id="mode-edit">EDIT
+            </label>
+            <label>
+                <input type="button" id="change-mode" value="Change Mode">
+            </label>
+          </form>
+        </div>
+
         <!-- insert content to this ul -->
         <div id="outer"></div>
 

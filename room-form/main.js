@@ -12,7 +12,6 @@ $(document).ready(function (){
     var $imglink = $('#img-link');
     //change back on the {{html}}
 
-
     //template that will be pulled by an id
     //name can change, not actually a room, a symbol rather
     var roomTemplate = $('#room-template').html();
@@ -34,22 +33,45 @@ $(document).ready(function (){
     });
 
     //********************************************************************
-    //DISPLAY
-    // $('#outer').on('click', '.room', function() {
-    // 	$( '.container' ).css({"display": "block"});
-    // });
+    //Using radiobuttons to toggle the functionality of click (on the symbol)
+    //when change-mode button is clicked
 
-    //HIGHLIGHT SYMBOL AND DRAGGABLE
-    //when a room symbol is clicked, add a border, a class target and draggable
-    //once a click outside is made, remove class and remove border, life is good again
-    $('#outer').on('click', '.room', function() {
-        $(this).css({"border": "3px solid black"});
-        $(this).addClass("target");
-        $(".target").draggable();
-        $(".target").draggable("enable");
+    // if(document.getElementById('isAgeSelected').checked) {
+    //     $("#txtAge").show();
+    // } else {
+    //     $("#txtAge").hide();
+    // }
+
+    //button has been clicked
+    $('#change-mode').click(function() {
+
+        //view button is selected
+        if(document.getElementById('mode-view').checked)
+        {
+            // gotta refresh since we only want to execute part of the code
+
+            // DISPLAY
+            $('#outer').on('click', '.room', function() {
+            	$( '.container' ).css({"display": "block"});
+            });
+        }
+        else //edit button is selected
+        {
+            //HIGHLIGHT SYMBOL AND DRAGGABLE
+            //when a room symbol is clicked, add a border, a class target and draggable
+            //once a click outside is made, remove class and remove border, life is good again
+            $('#outer').on('click', '.room', function() {
+                $(this).css({"border": "3px solid black"});
+                $(this).addClass("target");
+                $(".target").draggable(); //gotta initiliaze the constructor before any method calls are made
+                $(".target").draggable("enable");
+            });
+        }
+
     });
 
-    //make symbols draggable
+
+
 
 
     //reusing code,
