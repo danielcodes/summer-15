@@ -12,8 +12,6 @@
         <div>
           <form role="form">
             <label class="radio-inline">
-              <!-- radio buttons with the same name act can only
-              activate one at a time, cool -->
               <input type="radio" name="mode" id="mode-view">VIEW
             </label>
             <label class="radio-inline">
@@ -24,6 +22,23 @@
             </label>
           </form>
         </div>
+
+        <div id="mode-bar">
+            <p>
+                Mode: VIEW and EDIT modes available
+                VIEW - click on the symbol to display information about the room
+                EDIT - create a symbol through a form format, drag and delete if needed
+            </p>
+
+
+            <ul>
+                <li>CURRENT MODE</li>
+                <li>VIEW</li>
+                <li>EDIT</li>
+                <input type="button" name="name" value="CHANGE MODE">
+            </ul>
+        </div>
+
 
         <!-- insert content to this ul -->
         <div id="outer"></div>

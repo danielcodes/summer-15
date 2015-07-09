@@ -10,6 +10,27 @@
     border-radius: 5px;
 }
 
+/*description*/
+#mode-bar p{
+    margin: 0px;
+}
+
+/*status bar*/
+#mode-bar ul{
+    list-style: none;
+    padding: 0px;
+
+}
+
+/*status bar elements*/
+#mode-bar li {
+    padding-left: 4px;
+    padding-right: 4px;
+
+    display: inline;
+    border: 1px solid black;
+}
+
 /*here and below is the hover pop up*/
 
 ul {
