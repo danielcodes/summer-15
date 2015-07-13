@@ -36,16 +36,14 @@ $(document).ready(function (){
     });
 
     //********************************************************************
-    //Using radiobuttons to toggle the functionality of click (on the symbol)
-    //when change-mode button is clicked
 
-    // if(document.getElementById('isAgeSelected').checked) {
-    //     $("#txtAge").show();
-    // } else {
-    //     $("#txtAge").hide();
-    // }
+    // if(document.getElementById('isAgeSelected').checked)
+
 
     //button has been clicked
+    //need for a button since, when the page load, it loads the script and
+    //since radio button is not clicked, nothing activates
+    //can be turned into highlighted div boxes, one less click to change modes
     $('#change-mode').click(function() {
 
         //view button is selected
@@ -56,8 +54,8 @@ $(document).ready(function (){
             // DISPLAY
             $('#outer').on('click', '.room', function() {
             	$(this).find('.container').css({"display": "block"});
+                $(".target").draggable("disable");
             });
-
 
         }
         else //edit button is selected
@@ -66,6 +64,7 @@ $(document).ready(function (){
             //when a room symbol is clicked, add a border, a class target and draggable
             //once a click outside is made, remove class and remove border, life is good again
             $('#outer').on('click', '.room', function() {
+                $(this).find('.container').css({"display": "none"});
                 $(this).css({"border": "3px solid black"});
                 $(this).addClass("target");
                 $(".target").draggable(); //gotta initiliaze the constructor before any method calls are made
@@ -77,9 +76,19 @@ $(document).ready(function (){
 
 
 
+    //hides container (display) when outside click is made
+    $(document).mouseup(function (e)
+    {
+        var container = $(".container");
 
+        if (!container.is(e.target) // if the target of the click isn't the container...
+            && container.has(e.target).length === 0) // ... nor a descendant of the container
+        {
+            container.hide();
+        }
+    });
 
-    //reusing code,
+    //disable drag, target class and highlight
     $(document).mouseup(function (e)
     {
         //basically, the element that you're working with
@@ -91,7 +100,6 @@ $(document).ready(function (){
             //gotta remove all the nonsense classe that get added when draggable is called on an element
             $(".target").draggable("disable");
             container.removeClass("target");
-            // draggable ui-draggable ui-draggable-handle
             container.css({"border": "none"});
         }
     });
@@ -127,16 +135,4 @@ $(document).ready(function (){
         }); //end ajax post
     }); // end button
 
-});
-
-//hides div when outside click is made
-$(document).mouseup(function (e)
-{
-    var container = $(".container");
-
-    if (!container.is(e.target) // if the target of the click isn't the container...
-        && container.has(e.target).length === 0) // ... nor a descendant of the container
-    {
-        container.hide();
-    }
 });
