@@ -3,8 +3,6 @@ $(document).ready(function (){
     // sessionStorage['name'] = "Horace";
     // alert(sessionStorage['name']);
 
-
-
     //cache dom elements from the forms
     var $outer = $('#outer'); //spit out divs here
     //6 inputs
@@ -57,8 +55,10 @@ $(document).ready(function (){
 
             // DISPLAY
             $('#outer').on('click', '.room', function() {
-            	$( '.container' ).css({"display": "block"});
+            	$(this).find('.container').css({"display": "block"});
             });
+
+
         }
         else //edit button is selected
         {
