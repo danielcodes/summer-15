@@ -13,7 +13,6 @@ $(document).ready(function (){
     var $description = $('#description');
     var $occupant = $('#occupant');
     var $imglink = $('#img-link');
-    //change back on the {{html}}
 
     //template that will be pulled by an id
     //name can change, not actually a room, a symbol rather
@@ -116,6 +115,8 @@ $(document).ready(function (){
             description: $description.val(),
             occupant: $occupant.val(),
             imglink: $imglink.val(),
+            top: "",
+            left: ""
         };
 
         //post request
@@ -134,5 +135,46 @@ $(document).ready(function (){
             }
         }); //end ajax post
     }); // end button
+
+
+    // var element = document.getElementById('image_1'),
+    // style = window.getComputedStyle(element),
+    // top = style.getPropertyValue('top');
+
+    //retrieve css parameters of top and left when the button is pressed
+    //send a put request to update the object's fields
+    $("#save-position").on('click', function() {
+
+        //for each element of class room, do something
+        $('.room').each(function() {
+
+            //each div of class .room can be accessed with 'this'
+            //retrieving top and left
+            var style = window.getComputedStyle(this);
+            var top = style.getPropertyValue('top');
+            var left = style.getPropertyValue('left');
+
+            //console.log("these are the coordinates " + top + " " + left);
+        });
+
+        //GET request to retrieve JSON string
+        $.ajax({
+            type: 'GET',
+            url: 'http://rest.learncode.academy/api/daniel/friends',
+            success: function(data){
+                var rooms = data[0];
+                console.log(rooms);
+                //once I store the data into a variable
+                //it can be treated as as array of objects
+
+            }
+            //error goes here
+        });
+
+
+
+    }); //ends button
+
+
 
 });
