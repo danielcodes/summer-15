@@ -158,21 +158,33 @@ $(document).ready(function (){
             var left = style.getPropertyValue('left');
 
             console.log("these are the coordinates " + top + " " + left);
-        });
 
-        //GET request to retrieve JSON string
-        // $.ajax({
-        //     type: 'GET',
-        //     url: 'http://rest.learncode.academy/api/daniel/friends',
-        //     success: function(data){
-        //         var rooms = data[0];
-        //         console.log(rooms);
-        //         //once I store the data into a variable
-        //         //it can be treated as as array of objects
-        //
-        //     }
-        //     //error goes here
-        // });
+            //building, room#, dept, descr, occupant, link, left and top
+            //8 total
+
+            //look inside dom
+            console.log("NEW SYMBOL");
+            var room = {
+                building: $(this).find('#building').text(),
+                roomnumber: $(this).find('#roomnumber').text(),
+                department: $(this).find('#department').text(),
+                description: $(this).find('#description').text(),
+                occupant: $(this).find('#occupant').text(),
+                imglink: $(this).find('img').attr('src'),
+                //using the values found above
+                left: left,
+                top: top
+            };
+
+
+
+
+
+
+
+
+
+        });
 
 
 

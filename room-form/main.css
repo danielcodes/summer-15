@@ -3,6 +3,8 @@
 .room {
     height: 20px;
     width: 20px;
+    /*this sets a default position if it
+    isn't given on the form*/
     left: 300px;
     top: 60px;
     position: absolute;
