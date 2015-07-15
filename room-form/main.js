@@ -14,6 +14,9 @@ $(document).ready(function (){
     var $occupant = $('#occupant');
     var $imglink = $('#img-link');
 
+    var $left = $('#left');
+    var $top = $('#top');
+
     //template that will be pulled by an id
     //name can change, not actually a room, a symbol rather
     var roomTemplate = $('#room-template').html();
@@ -115,8 +118,8 @@ $(document).ready(function (){
             description: $description.val(),
             occupant: $occupant.val(),
             imglink: $imglink.val(),
-            top: "",
-            left: ""
+            left: $left.val(),
+            top: $top.val()
         };
 
         //post request
@@ -154,22 +157,22 @@ $(document).ready(function (){
             var top = style.getPropertyValue('top');
             var left = style.getPropertyValue('left');
 
-            //console.log("these are the coordinates " + top + " " + left);
+            console.log("these are the coordinates " + top + " " + left);
         });
 
         //GET request to retrieve JSON string
-        $.ajax({
-            type: 'GET',
-            url: 'http://rest.learncode.academy/api/daniel/friends',
-            success: function(data){
-                var rooms = data[0];
-                console.log(rooms);
-                //once I store the data into a variable
-                //it can be treated as as array of objects
-
-            }
-            //error goes here
-        });
+        // $.ajax({
+        //     type: 'GET',
+        //     url: 'http://rest.learncode.academy/api/daniel/friends',
+        //     success: function(data){
+        //         var rooms = data[0];
+        //         console.log(rooms);
+        //         //once I store the data into a variable
+        //         //it can be treated as as array of objects
+        //
+        //     }
+        //     //error goes here
+        // });
 
 
 

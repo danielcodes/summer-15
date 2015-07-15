@@ -31,7 +31,7 @@
         <!-- save room for the template to be inserted -->
         <template id="room-template">
             <!-- room-number -->
-            <div class="room" id="{{roomnumber}}">
+            <div class="room" id="{{roomnumber}}" style="background-color: {{building}}; left: {{left}}px; top: {{top}}px">
                 <!-- container, holds both picture and data -->
                 <div class="container">
                     <!-- picture -->
@@ -74,6 +74,9 @@
             <p> description: <input type="text" id="description"> </p>
             <p> occupant: <input type="text" id="occupant"> </p>
             <p> image-link: <input type="text" id="img-link"></p>
+            <!-- testing purposes -->
+            <p> left: <input type="text" id="left"> </p>
+            <p> top: <input type="text" id="top"></p>
             <!-- button to add -->
             <button id="add-room">Add room</button>
         </div>
