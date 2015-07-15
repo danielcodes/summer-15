@@ -162,8 +162,6 @@ $(document).ready(function (){
             //building, room#, dept, descr, occupant, link, left and top
             //8 total
 
-            //look inside dom
-            console.log("NEW SYMBOL");
             var room = {
                 building: $(this).find('#building').text(),
                 roomnumber: $(this).find('#roomnumber').text(),
@@ -176,13 +174,17 @@ $(document).ready(function (){
                 top: top
             };
 
-
-
-
-
-
-
-
+            $.ajax({
+                type: 'PUT',
+                url: 'http://rest.learncode.academy/api/daniel/friends/' + $(this).attr('data-id'),
+                data: room,
+                success: function(newOrder) {
+                    console.log("Successfully update symbol position!");
+                },
+                error: function() {
+                    alert('error updating order');
+                }
+            });
 
         });
 
