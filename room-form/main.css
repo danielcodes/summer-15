@@ -82,3 +82,13 @@ ul {
     right: 10px;
     background-color: #DCDCD9;
 }
+
+/*TRASH*/
+#trash {
+    height: 90px;
+    width: 90px;
+    border: 1px solid red;
+}
+#trash.ui-state-hover{
+    background: red;
+}

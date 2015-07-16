@@ -188,9 +188,26 @@ $(document).ready(function (){
 
         });
 
-
-
     }); //ends button
+
+
+    //droppable trash to delete symbols
+    $("#trash").droppable({
+        accept: ".room",
+        hoverClass: "ui-state-hover",
+        drop: function(ev, ui) {
+            ui.draggable.remove();
+
+            //make ajax call to remove here
+            $.ajax({
+    			type: 'DELETE',
+    			url: 'http://rest.learncode.academy/api/daniel/friends/' + $(ui.draggable).attr('data-id'),
+    			success: function (){
+    				console.log("Item has been deleted");
+    			}
+    		});
+        }
+    });
 
 
 
