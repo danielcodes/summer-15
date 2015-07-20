@@ -5,15 +5,13 @@ $(document).ready(function (){
 
     //cache dom elements from the forms
     var $outer = $('#outer'); //spit out divs here
-    //6 inputs
+    //8 inputs
     var $building = $('#building');
-    //can't use -, on variable names, lame
     var $roomnumber = $('#room-number');
     var $department = $('#department');
     var $description = $('#description');
     var $occupant = $('#occupant');
     var $imglink = $('#img-link');
-
     var $left = $('#left');
     var $top = $('#top');
 
@@ -139,11 +137,6 @@ $(document).ready(function (){
         }); //end ajax post
     }); // end button
 
-
-    // var element = document.getElementById('image_1'),
-    // style = window.getComputedStyle(element),
-    // top = style.getPropertyValue('top');
-
     //retrieve css parameters of top and left when the button is pressed
     //send a put request to update the object's fields
     $("#save-position").on('click', function() {
@@ -156,8 +149,6 @@ $(document).ready(function (){
             var style = window.getComputedStyle(this);
             var top = style.getPropertyValue('top');
             var left = style.getPropertyValue('left');
-
-            console.log("these are the coordinates " + top + " " + left);
 
             //building, room#, dept, descr, occupant, link, left and top
             //8 total
@@ -185,9 +176,7 @@ $(document).ready(function (){
                     alert('error updating order');
                 }
             });
-
-        });
-
+        }); //end "loop"
     }); //ends button
 
 
@@ -207,7 +196,12 @@ $(document).ready(function (){
     			}
     		});
         }
-    });
+    }); //end droppable
+
+
+    //when edit mode is created,
+
+
 
 
 

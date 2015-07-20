@@ -5,11 +5,12 @@
     width: 20px;
     /*this sets a default position if it
     isn't given on the form*/
-    left: 300px;
-    top: 60px;
+    left: 184px;
+    top: 70px;
     position: absolute;
     background-color: navy;
     border-radius: 5px;
+    z-index: 1;
 }
 
 /*description*/
@@ -86,9 +87,36 @@ ul {
 /*TRASH*/
 #trash {
     height: 90px;
-    width: 90px;
+    width: 260px;
     border: 1px solid red;
+    margin: 10px;
 }
 #trash.ui-state-hover{
     background: red;
+}
+
+/*Placing floor plan and form*/
+#wrapper {
+    position: relative;
+    padding: 10px;
+}
+
+#data-form {
+    position: absolute;
+    background-color: #CCCC66;
+    padding: 8px;
+    width: 280px;
+    left: 75%;
+}
+
+#outer {
+    background : url("http://127.0.0.1:4567/img/IMG_0003.JPG");
+	position: absolute;
+    width: 910px;
+	height : 550px;
+    right: 26%;
+    /*z-index: 1;*/
+
+    border: 1px solid black;
+    margin-bottom: 15px;
 }

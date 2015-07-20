@@ -5,7 +5,6 @@
     </head>
     <body>
 
-        <h2>Room Form</h2>
         <p>MODE: (either edit or display)</p>
 
         <!-- toggle between these two modes -->
@@ -23,17 +22,12 @@
             <input type="button" id="save-position" value="Save position">
           </form>
         </div>
-
-        <!-- TRASH -->
-        <div id="trash">trash</div>
-
-        <!-- insert content to this ul -->
-        <div id="outer"></div>
+        <p>Room symbol created here: </p>
 
         <!-- save room for the template to be inserted -->
         <template id="room-template">
             <!-- room-number -->
-            <div data-id={{id}} class="room" id="{{roomnumber}}" style="background-color: {{building}}; left: {{left}}; top: {{top}}">
+            <div data-id={{id}} class="room" id="{{roomnumber}}" style="left: {{left}}; top: {{top}}">
                 <!-- container, holds both picture and data -->
                 <div class="container">
                     <!-- picture -->
@@ -66,21 +60,38 @@
             </div>
         </template>
 
-        <!-- enclose form in a division -->
-        <div id="room-form">
-            <h4>Add room info</h4>
-            <!-- 5 parameters -->
-            <p> Building: <input type="text" id="building"> </p>
-            <p> room-number: <input type="text" id="room-number"> </p>
-            <p> department: <input type="text" id="department"> </p>
-            <p> description: <input type="text" id="description"> </p>
-            <p> occupant: <input type="text" id="occupant"> </p>
-            <p> image-link: <input type="text" id="img-link"></p>
-            <p> left: <input type="text" id="left"> </p>
-            <p> top: <input type="text" id="top"></p>
-            <!-- button to add -->
-            <button id="add-room">Add room</button>
+        <!-- WRAPS THE FLOOR PLAN AND FORM -->
+        <div id="wrapper">
+
+            <!-- insert content to this ul -->
+            <div id="outer" ></div>
+
+            <!-- enclose form in a division -->
+            <div id="data-form">
+
+                <!-- ADDING BACKGROUND IMG THROUGH A LINK -->
+                <h4>Add floor plan image</h4>
+                <p> Floor-plan link <input type="text" id="floorplan"> </p>
+                <button id="add-plan">Add floor plan</button>
+
+                <h4>Add room</h4>
+                <!-- 5 parameters -->
+                <p> Building: <input type="text" id="building"> </p>
+                <p> room-number: <input type="text" id="room-number"> </p>
+                <p> department: <input type="text" id="department"> </p>
+                <p> description: <input type="text" id="description"> </p>
+                <p> occupant: <input type="text" id="occupant"> </p>
+                <p> image-link: <input type="text" id="img-link"></p>
+                <!-- <p> left: <input type="text" id="left"> </p>
+                <p> top: <input type="text" id="top"></p> -->
+                <!-- button to add -->
+                <button id="add-room">Add room</button>
+                <!-- TRASH -->
+                <div id="trash">trash</div>
+            </div>
+
         </div>
+
 
         <!-- scripts -->
         <script src="bower_components/jquery/dist/jquery.min.js"></script>
