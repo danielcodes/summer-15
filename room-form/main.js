@@ -24,7 +24,7 @@ $(document).ready(function (){
         $outer.append(Mustache.render(roomTemplate, room));
     }
 
-    //GET request to retrieve div
+    //GET request to retrieve all the symbols
     $.ajax({
         type: 'GET',
         url: 'http://rest.learncode.academy/api/daniel/friends',
@@ -57,6 +57,8 @@ $(document).ready(function (){
                 $(".target").draggable("disable");
             });
 
+            $('#data-form').hide();
+
         }
         else //edit button is selected
         {
@@ -70,6 +72,8 @@ $(document).ready(function (){
                 $(".target").draggable(); //gotta initiliaze the constructor before any method calls are made
                 $(".target").draggable("enable");
             });
+
+            $('#data-form').show();
         }
 
     });
@@ -198,8 +202,41 @@ $(document).ready(function (){
         }
     }); //end droppable
 
+    //add floor plan, a post request
+    $('#add-plan').on('click', function() {
 
-    //when edit mode is created,
+        //create the object, single string with the link
+        // var fl_plan = {
+        //     imglink: $('#floorplan').val(),
+        // };
+
+        // $.ajax({
+        //     type: 'POST',
+        //     url: 'http://rest.learncode.academy/api/daniel/plan',
+        //     data: fl_plan,
+        //     success: function() {
+        //         console.log("Added floor plan image");
+        //     },
+        //     error: function() {
+        //         alert("error adding floor plan");
+        //     }
+        // });
+
+    });
+
+
+    $.ajax({
+        type: 'GET',
+        url: 'http://rest.learncode.academy/api/daniel/plan',
+        success: function(imglink) {
+            //creating a parameter at func givens back the array of objects
+            console.log(imglink[0]);
+        },
+        error: function() {
+            alert("error adding floor plan");
+        }
+    });
+
 
 
 

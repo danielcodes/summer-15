@@ -1,3 +1,6 @@
+html {
+    background-color: #82A5B6;
+}
 
 /*added*/
 .room {
@@ -5,12 +8,11 @@
     width: 20px;
     /*this sets a default position if it
     isn't given on the form*/
-    left: 184px;
-    top: 70px;
+    left: 172px;
+    top: -48px;
     position: absolute;
     background-color: navy;
     border-radius: 5px;
-    z-index: 1;
 }
 
 /*description*/
@@ -54,7 +56,7 @@ ul {
     position: relative;
     background-color: #00334C;
     display: none;
-    z-index: 1000;
+    z-index: 1;
 }
 
 .picture {
@@ -90,7 +92,16 @@ ul {
     width: 260px;
     border: 1px solid red;
     margin: 10px;
+
+    /*3 lines to center text*/
+    text-align: center;
+    vertical-align: middle;
+    line-height: 90px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #B20000;
 }
+
 #trash.ui-state-hover{
     background: red;
 }
@@ -101,22 +112,22 @@ ul {
     padding: 10px;
 }
 
-#data-form {
-    position: absolute;
-    background-color: #CCCC66;
-    padding: 8px;
-    width: 280px;
-    left: 75%;
-}
-
 #outer {
-    background : url("http://127.0.0.1:4567/img/IMG_0003.JPG");
+    background : url("http://127.0.0.1:4567/img/5th-whole.PNG");
 	position: absolute;
     width: 910px;
 	height : 550px;
-    right: 26%;
-    /*z-index: 1;*/
 
     border: 1px solid black;
     margin-bottom: 15px;
+}
+
+#data-form {
+    position: absolute;
+    background-color: C3C3E5;
+    padding: 8px;
+    width: 280px;
+    left: 935px;
+    border: 1px solid black;
+    /*display: none;*/
 }
