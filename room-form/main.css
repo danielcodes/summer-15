@@ -90,7 +90,7 @@ ul {
 #trash {
     height: 90px;
     width: 260px;
-    border: 1px solid red;
+    border: 3px solid red;
     margin: 10px;
 
     /*3 lines to center text*/
