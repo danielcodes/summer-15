@@ -1,0 +1,217 @@
+*****************************************************************
+
+SUMMER INTERSHIP PROJECT
+prototype is stable after last commit on june 17th
+
+--means issues
+
+GOAL: A small web application that displays images and data regarding a specific room on a floor plan
+
+PROGRESS LOG
+06/22/15
+-display floor plan img as is, zoom in and out with ctrl + and -
+-testing the onclick function for the symbol, which should lock the window and display a picture and some data
+-keep it to one image per room to reduce complexity
+
+06/23/15
+-figure out hover function and make it display html
+-organize the html displayed into an image (no more panoramas) and the tabular data
+-need to maintain picture size consistent, in order to crop out the non-used border
+-finish and add it onto hover
+-END, finished the html block that must display when hovering
+-TMR, need to implement hover
+
+06/24/15
+-still working on hover
+-get images, crop through photoshop to maintain high resolution
+--From jsfiddle to the actual pages, modifications were made on the list as things were not displaying properly
+-currently using hover to toggle on the display function
+--need to add timer to hover
+--rewrite hover display script so that it is able to pull data off server
+--problem where the display can extend the page, need to tell it to display based on the current size of the screen
+END, got the hover feature to work, need to further implement hoverIntent
+TMR, set a default size for the svg images
+
+06/25/15
+-set sizes for svg images for display, nac building?
+--send email to set up meeting to further discuss details of the project
+-finish ajax tutorials on youtube
+-look into light box from book
+
+---WEEKEND
+
+06/29/15
+-need to solidify planning stage, from UI to database structure
+-finish learning ajax tutorial
+-if hover can stay within page boundaries, it would be an ok solution
+--two issues, timer on hover and respecting page boundaries
+450 in the ajax tutorial
+-learned to move things up a directory (mv * .[^.]* ..)
+
+06/30/15
+-new aim for the project: create a web tool, not the end product
+-this is a new line
+--git was not cloning, had to reload vagrant box
+-can't create my own api yet, can either be formatting or missing the .json
+-finish installing nodejs, after the curl command
+-attemt to get data from own-setup api
+
+07/01/15
+-install nodejs
+-need to move picture urls from github to the VM's server - done
+**CALL LENOVO TO DO A HARD RESET ON THE BATTERY**
+-the sandbox folder on the server, when openede up, renders the html file
+--no need to keep sand repo on VM, use sync folder to update images
+--send email regarding changeds, building a tool not end product
+--display two dots creates an issue, as the jquery selector targets all the containers, need to it targed only at symbol i'm looking it, child of blue
+--made some additions to the ajax tutorial, cached added elements, define new params in the object on the POST function, add to template for renderin
+
+07/02/15
+-cloned a separate sandbox repo on root, the one finished with all the tutorials
+--FE, read over lightbox chapter and try to implement it. The main problem is to maintain static content (table data) and to have the ability to change through the pictures
+--BE, need to create a form that creates an html symbol (template) on the page
+--need to set up own api on the VM, to test the adding and retrieving of data
+**getting closer to fixing the batter issue**, must uninstall the lenovo driver
+-save commits locally, but DO NOT PUSH it to github repo
+-got a api to work with, api/daniel/friends
+END
+need to finish the form, add post request first and place element into the page
+FE, need for a new display, lightbox with slider with a fixed div for data
+BE, take inputted data from the form and shape it into an html element
+
+ISSUES
+-make the form line up
+-provide link to image -> need a solution for several pictures
+
+
+Tesing templating on sandbox clone
+-hardcode, before creating a template
+-can create simple app from scratch, without edit
+
+--
+
+07/05/15
+-still working on the form that creates html, specifically the post request
+-correctly spitting information into the page, now format it
+-need to create symbol, also need to make it accessible on my main pc
+-hover function not working on added elements
+
+--
+
+07/06/15
+-create event listener for added elements, new div activate hover
+-click to display, done. click outisde to hide, done
+-now need to make the symbol draggable
+--copy the room-form folder into sandbox repo and push it up, ASAP
+-the drag function should have a switch
+-symbol needs 2 event listeners, display and drag, that means that 2 modes of viewership are needed
+-disable click and apply drag, separate tasks 
+-room form can also be formatted accordingly
+**CALL ABOUT THE BATTERY PROBLEM ASAP**
+-gotta read jquery ui documentation
+--data box list can be compressed to give the picture more space
+
+07/07/15
+-edit mode, on click, highlight (activate a black border)
+-can be done by adding a class or an id, targeted
+-creating a target symbol works, future: only select on symbol at a time
+-next, work on draggable
+--also, just as images are added, a background image needs to be added as well for the plan when creating the database, create floor-4/2 folders, floorplan and rooms. Format can be decided later
+-GOAL: before demo, must have draggabel symbols and be able to create multiple instances of them
+--problem installing node modules on vagrant box
+TEMP fix
+installing bower through npm was fixed by adding -sudo-
+cloned through https rather than git, to install packages
+-start working on a repo from the vm, to have access to tools
+-able to drag symbol, now need to change position after the element has been dragged
+-bug with target drag
+
+07/08/15
+-spend a good chunk of time on nonsense
+-need to make it so that only the target is draggable
+-draw page on paper, the functionality of 2 pages, view and edit
+-symbol now only drags when highlighted
+-erase nodes on page, need this asap, will be done with a droppable trash
+-create radio buttons to toggle between modes
+--demistify, the delete function from the tutorial, this must be put together along with the droppable trash
+-problem where both modes get activated at the same time
+--solution: using a submit button that refreshes the page so that only one of the events fire, either view or edit
+
+07/09/15
+-colored boxes that displayy status, and since there are only two states, the user can toggle between them. Set view by default 
+--fix npm symlink issue, as packages can't be installed
+-two goals for the weekend, isolate the two different code firing (edit and view)
+and also create the droppable trash (http delete request)
+---after all that's finished, need to add extra parameters to the object, to store coordinates on drag. Post drag, the server should dish desired coordinates
+
+--
+
+07/11/15
+-fixed express issue by adding --no-bin-links, sigh get a mac
+
+-adminLTE, for admin UI
+-can replace the target functionality with focus function
+-remove button altogether, inject class to provide functionality
+
+--
+
+07/13/15
+-still working on isolating the functionality of view and edit
+--solution, when one event is activated, disable the other
+-call the lenovo people, this problem HAS to be fixed
+
+07/14/15
+-explain that the project is data driven, from DB tables to JSON strings. This makes collection of data essential, and rending it all on the web is a simple GET request
+-2 items that need work, are the dropppable trash and saving the state of a dragged object
+-do a GET request and put the data set in a variable, then it becomes a problem of scope and still not sure as to how the success function works
+
+07/15/15
+-testing slotting the symbol based on coordinates of left and top - nope
+-inserting left and top as input fields works, same problem. need to rewrite the top and left fields with a put request
+-recreate the object from scratch, then send it back
+
+07/20/15
+-will work on adding the floor plan through a link
+
+07/21/15
+-button on click, add css to div with outer div
+-bug where the dots ovelap container and dots are not visible over form
+-USE POSTMAN
+-solve issue of rendering 
+
+07/22/15
+-working on new front page
+-need to prep for discussion topics tomorrow
+
+07/23/15
+-how can that one single page be replicated and added every building floor has it's own page
+-floor images will be stored in a database and javascript page needs to be templated
+
+--
+
+07/27/15
+-don't know how to scale the product, creating javascript on the fly and having all the
+
+
+
+************* SEPARATE SECTION - VAGRANT **********************************
+
+LEARNING TO USE VAGRANT
+
+-provisions are written in the vagrant file, in this case install apache, so it is telling it to install new software
+-after reloading, a server was spun up but it needs more in order to be seen on the web
+
+networking options
+-port forwarding, ports on the guest to share on host 
+
+
+ISSUES
+-Machine somehow lost sync with vagrant, remade VM
+-the issue was solved through provision, what the heck is that?
+*** SOLVED THE DISSAPEARING VMS ISSUES BY SETTING UP THE VM BOX FOLDER ON THE CYGWIN MOUNT RATHEN THAN THROUGH USERS *** /cygwin64/daniel/home not users/daniel
+
+
+
+
+
+*****************************************************************************
